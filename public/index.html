@@ -1025,7 +1025,7 @@
             }
             
             try {
-                const response = await fetch('/api/verify-password', {
+                const response = await fetch('https://lastcar-productions-d8eb7d29416d.herokuapp.com/api/verify-password', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -1054,7 +1054,7 @@
             const workGrid = document.getElementById('workGrid');
             
             try {
-                const response = await fetch('/api/work-samples');
+                const response = await fetch('https://lastcar-productions-d8eb7d29416d.herokuapp.com/api/work-samples');
                 const data = await response.json();
                 
                 if (data.success && data.data) {
@@ -1088,7 +1088,7 @@
 
         async function checkAuthStatus() {
             try {
-                const response = await fetch('/api/check-auth');
+                const response = await fetch('https://lastcar-productions-d8eb7d29416d.herokuapp.com/api/check-auth');
                 const data = await response.json();
                 
                 if (data.authenticated) {

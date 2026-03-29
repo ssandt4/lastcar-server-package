@@ -3,6 +3,19 @@ const path = require('path');
 const session = require('express-session');
 const app = express();
 
+// Enable CORS for lastcarproductions.com
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://lastcarproductions.com');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    
+    if (req.method === 'OPTIONS') {
+        return res.sendStatus(200);
+    }
+    next();
+});
+
 // Configuration
 const PORT = process.env.PORT || 3000;
 const PARTNER_PASSWORD = process.env.PARTNER_PASSWORD || 'LastCar2024'; // Set via environment variable in production
