@@ -1,0 +1,20 @@
+{
+  "name": "lastcar-productions-server",
+  "version": "1.0.0",
+  "description": "Last Car Productions website with server-side password protection",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["production", "film", "creative"],
+  "author": "Last Car Productions",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
