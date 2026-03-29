@@ -1,4 +1,8 @@
-const express = require('express');
+cookie: {
+        maxAge: 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        secure: false,  // Changed from process.env.NODE_ENV === 'production'
+        sameSite: 'lax'  // Added thisconst express = require('express');
 const path = require('path');
 const session = require('express-session');
 const app = express();
