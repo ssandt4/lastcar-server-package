@@ -1,3 +1,15 @@
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'lastcar-secret-key-change-in-production',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none'
+    }
+}));
+
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
