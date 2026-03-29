@@ -15,12 +15,13 @@ app.use(express.static('public')); // Serve static files from 'public' folder
 // Session configuration
 app.use(session({
     secret: process.env.SESSION_SECRET || 'lastcar-secret-key-change-in-production',
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     cookie: {
         maxAge: 24 * 60 * 60 * 1000, // 24 hours
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production' // Use secure cookies in production
+        secure: false, // Use secure cookies in production
+	sameSite: 'lax'
     }
 }));
 
